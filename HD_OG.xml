@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+	<extension version="2.5" type="plugin" group="system" method="upgrade">
+	<name>System - HD-OG</name>
+	<author>Hyde-Design</author>
+	<creationDate>March 2013</creationDate>
+	<copyright>2013 Hyde-Design</copyright>
+	<license>GNU General Public License</license>
+	<authorEmail>sales@hyde-design.co.uk</authorEmail>
+	<authorUrl>www.hyde-design.co.uk</authorUrl>
+	<version>3.2</version>
+	<description>HD-OG enables you to integrate your Joomla website into the Open Graph Protocol (Facebook's social search engine). Use the Facebook URL linter at http://developers.facebook.com/tools/lint/ to test the validity of the data. For more information on the Open Graph Protocol visit http://ogp.me/</description>
+	<files>
+		<filename plugin="HD_OG">HD_OG.php</filename>
+	</files>
+
+	<config>
+	<fields name="params">
+	<fieldset name="basic">
+		<field name="title_core" type="spacer" default="BASIC METADATA" label="" description="Basic data required by Open Graph Protocol." />
+   		<field name="hdog_type" type="list" default="website" label="Type" description="Open Graph metadata Type">
+		<option value="website">website</option>
+		<option value="article">article</option>
+                <option value="book">book</option>
+                <option value="profile">profile</option>
+                <option value="music.song">music.song</option> 
+                <option value="music.album">music.album</option>
+                <option value="music.playlist">music.playlist</option>
+                <option value="music.radio_station">music.radio_station</option>
+                <option value="video.movie">video.movie</option>
+                <option value="video.episode">video.episode</option>
+                <option value="vide.tv_show">vide.tv_show</option>
+                <option value="video.other">video.other</option>
+		</field>
+		
+		<field name="hdog_image" type="media" default="" label="Select an image" description="Select a default thumbnail image. For best use the image should be at least 200px in both dimensions."/>
+		<field name="hdog_fbpageid" type="text" default="" label="Define a FB Page ID" description="Put here your FB Page ID.To find Page ID : 1. Go to your page 2. Click Settings 3. Click Page Info 4. you can see Facebook Page ID" />
+	
+		<field name="title_admin" type="spacer" default="FACEBOOK ADMINISTRATOR" label="" description="Only required for testing with Facebook APIs URL linter." />
+		<field name="use_admin" type="radio" default="0" label="Enable Facebook Admin?" description="">
+		<option value="1">Yes</option>
+		<option value="0">No</option>
+		</field>
+		<field name="hdog_admins" type="text" default="USER_ID" label="Admin ID" description="Enter your Facebook Profile number here (the nine digit id number displayed in the URL of your Facebook's profile page). Note: This is only required for the Facebook URL linter to work, it is not required for anything other than admin testing." ></field>
+</fieldset>
+</fields>
+</config>
+</extension>
