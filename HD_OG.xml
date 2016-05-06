@@ -16,6 +16,7 @@
 	<config>
 	<fields name="params">
 	<fieldset name="basic">
+		<field name="disable_in" type="text" default="com_k2" label="Disable in" description="Choose the components to disable this plugin.Please write like this : com_k2 or like this (with more then one, separated by comma and without spaces): com_k2,com_jdownloads" />
 		<field name="title_core" type="spacer" default="BASIC METADATA" label="" description="Basic data required by Open Graph Protocol." />
    		<field name="hdog_type" type="list" default="website" label="Type" description="Open Graph metadata Type">
 		<option value="website">website</option>
