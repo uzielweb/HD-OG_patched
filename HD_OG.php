@@ -47,6 +47,18 @@ $hdog_fbpageid_tmp = $this->params->get( 'hdog_fbpageid' );
         //check article view
 
         $view =JRequest::getVar('view');
+        $option =JRequest::getVar('option'); 
+        $disable_in = $this->params->get( 'disable_in' );
+        $pieces = explode(",", $disable_in);
+        foreach ($pieces as $value){
+        if ($option == $value) {
+          $hdog_image = "";
+          $hdog_fbpageid = "";
+          $hdog_url = "";
+          $hdog_type = "";
+          $hdog_title = "";
+        }
+          }
         if ($view == "article") {
 
         $articlesModel = JModelLegacy::getInstance('ContentModelArticle');
