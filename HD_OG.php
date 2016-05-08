@@ -110,7 +110,7 @@ $hdog_fbpageid_tmp = $this->params->get( 'hdog_fbpageid' );
 ';
 
         //get locale
-        $lang =& JFactory::getLanguage(); $sitelanguage = $lang->getTag(); $oglanguage = str_replace ('-', '_', $sitelanguage);
+        $lang = JFactory::getLanguage(); $sitelanguage = $lang->getTag(); $oglanguage = str_replace ('-', '_', $sitelanguage);
 	$hdog_locale = '<meta property="og:locale" content="'.$oglanguage.'"/>
 ';
         
