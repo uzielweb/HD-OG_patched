@@ -7,7 +7,7 @@
 	<license>GNU General Public License</license>
 	<authorEmail>sales@hyde-design.co.uk</authorEmail>
 	<authorUrl>www.hyde-design.co.uk</authorUrl>
-	<version>3.2.1</version>
+	<version>3.2.2</version>
 	<description>HD-OG enables you to integrate your Joomla website into the Open Graph Protocol (Facebook's social search engine). Use the Facebook URL linter at http://developers.facebook.com/tools/lint/ to test the validity of the data. For more information on the Open Graph Protocol visit http://ogp.me/</description>
 	<files>
 		<filename plugin="HD_OG">HD_OG.php</filename>
