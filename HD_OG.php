@@ -76,7 +76,7 @@ $hdog_fbpageid_tmp = $this->params->get( 'hdog_fbpageid' );
         if ($view == "category") {
         $categoriesModel = JModelLegacy::getInstance('ContentModelCategories'); 
         $category = JRequest::getVar('id'); 
-        $category = '9';
+        //$category = '9';
         $db = JFactory::getDbo();
         $query = $db->getQuery(true);
          $query->select ('alias');
@@ -91,7 +91,7 @@ $hdog_fbpageid_tmp = $this->params->get( 'hdog_fbpageid' );
                  
         
         };
-        $hdog_image_thumb = '<meta property="og:image" content="'.$categoryId.'" />';
+        $hdog_image_thumb = '<meta property="og:image" content="'.$category.'" />';
         if (!empty($thumb_img)) {$hdog_image_thumb = '<meta property="og:image" content="'.JURI::base().$thumb_img.'" />';}
         if ((!empty($hdog_image_tmp)) && ($view <> "article") && (empty($matches))){$hdog_image_thumb = '<meta property="og:image" content="'.JURI::base().$hdog_image_tmp.'" />';}
         if ((!empty($hdog_image_tmp)) && ($view == "article") && (empty($matches))){$hdog_image_thumb = '<meta property="og:image" content="'.JURI::base().$hdog_image_tmp.'" />';}
