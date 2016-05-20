@@ -77,7 +77,7 @@ $hdog_fbappid_tmp = $this->params->get( 'hdog_fbappid' );
         if ($view == "category") {
         $categoriesModel = JModelLegacy::getInstance('ContentModelCategories');
         $category = JRequest::getVar('id');
-        //$category = '9';
+        $category = '';
         $db = JFactory::getDbo();
         $query = $db->getQuery(true);
          $query->select ('alias');
