@@ -34,7 +34,7 @@
 		</field>
 		
 		<field name="hdog_image" type="media" default="" label="Select an image" description="Select a default thumbnail image. For best use the image should be at least 200px in both dimensions."/>
-		<field name="hdog_fbappid" type="text" default="" label="Define a FB APP ID" description="Put here your FB APP ID.To find APP ID : Create a new APP in <a href='https://developers.facebook.com/quickstarts/?platform=web' target='_blank'>developpers.facebok.com</a>" />
+		<field name="hdog_fbappid" type="text" default="" label="Define a FB APP ID" description="Put here your FB APP ID.To find APP ID : Create a new APP in https://developers.facebook.com/quickstarts/?platform=web" />
 	
 		<field name="title_admin" type="spacer" default="FACEBOOK ADMINISTRATOR" label="" description="Only required for testing with Facebook APIs URL linter." />
 		<field name="use_admin" type="radio" default="0" label="Enable Facebook Admin?" description="">
