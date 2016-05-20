@@ -53,7 +53,7 @@ $hdog_fbappid_tmp = $this->params->get( 'hdog_fbappid' );
         $pieces = explode(",", $disable_in);
         foreach ($pieces as $value){
         if ($option == $value) {
-          $hdog_image = "9";
+          $hdog_image = "";
           $hdog_fbappid = "";
           $hdog_url = "";
           $hdog_type = "";
@@ -77,7 +77,7 @@ $hdog_fbappid_tmp = $this->params->get( 'hdog_fbappid' );
         if ($view == "category") {
         $categoriesModel = JModelLegacy::getInstance('ContentModelCategories');
         $category = JRequest::getVar('id');
-        $category = '';
+        $category = '9';
         $db = JFactory::getDbo();
         $query = $db->getQuery(true);
          $query->select ('alias');
