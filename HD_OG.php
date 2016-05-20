@@ -53,7 +53,7 @@ $hdog_fbappid_tmp = $this->params->get( 'hdog_fbappid' );
         $pieces = explode(",", $disable_in);
         foreach ($pieces as $value){
         if ($option == $value) {
-          $hdog_image = "";
+          $hdog_image = "9";
           $hdog_fbappid = "";
           $hdog_url = "";
           $hdog_type = "";
