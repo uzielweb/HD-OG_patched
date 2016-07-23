@@ -57,8 +57,13 @@ $hdog_fbappid_tmp = $this->params->get( 'hdog_fbappid' );
         $articleId = JRequest::getInt('id', 0);
         $hdog_image_thumb = '<meta property="og:image" content="'.$articleId.'" />';
            $article = $articlesModel->getItem($articleId);
-            preg_match('/(?<!_)src=([\'"])?(.*?)\\1/',$article->introtext, $matches);
-              $thumb_img = $thumb[02];
+	preg_match('/(?<!_)src=([\'"])?(.*?)\\1/',$article->introtext, $matches);
+	if (!empty($matches)){
+	$thumb_img = $matches[2];	
+	}
+	if (empty($matches)){
+	$thumb_img = '';	
+	}
               if (!empty($thumb_img)) {$hdog_image_thumb = '<meta property="og:image" content="'.JURI::base().$thumb_img.'" />
 ';}           else {$hdog_image_thumb = '<meta property="og:image" content="'.JURI::base().$hdog_image_tmp.'" />
 ';}}
