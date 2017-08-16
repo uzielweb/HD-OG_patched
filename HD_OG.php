@@ -12,7 +12,7 @@
 # Homepage   : www.hyde-design.co.uk
 # Author     : Hyde-Design
 # Email      : sales@hyde-design.co.uk
-# Version    : 3.2
+# Version    : 3.7
 # License    : http://www.gnu.org/copyleft/gpl.html GNU/GPL
 # Patched by Uziel Almeida Oliveira    : https://github.com/uzielweb
 // no direct access
