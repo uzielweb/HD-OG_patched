@@ -12,7 +12,7 @@
 # Homepage   : www.hyde-design.co.uk
 # Author     : Hyde-Design
 # Email      : sales@hyde-design.co.uk
-# Version    : 3.7
+# Version    : 3.7.1
 # License    : http://www.gnu.org/copyleft/gpl.html GNU/GPL
 # Patched by Uziel Almeida Oliveira    : https://github.com/uzielweb
 // no direct access
@@ -143,7 +143,7 @@ class plgSystemHD_OG extends JPlugin
                 $db->setQuery($query);
                 $results = $db->loadObjectList();
                 //       echo 'xx '.$results.' xx';
-                
+
             };
             $hdog_image_thumb = '<meta property="og:image" content="' . JURI::base() . $hdog_image_tmp . '" />';
             if (!empty($thumb_img))
@@ -164,7 +164,7 @@ class plgSystemHD_OG extends JPlugin
             };
             if (($view == "property") and ($option == "com_jea"))
             {
-                $hdog_image_thumb = '<meta property="og:image" content="' . JURI::base() . $thumb_img . '" />';
+                $hdog_image_thumb = '<meta property="og:image" content="' . JURI::base() . 'images/com_jea/images/'.$jeaitem->id.'/'.$thumb_img . '" />';
             };
 
             //get meta description
@@ -204,4 +204,3 @@ class plgSystemHD_OG extends JPlugin
         }
     }
 }
-
