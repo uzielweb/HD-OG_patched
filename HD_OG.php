@@ -41,27 +41,19 @@ class plgSystemHD_OG extends JPlugin
             $app = JFactory::getApplication();
             $hdog_title_tmp = $document->getTitle();
             $hdog_title = '<meta property="og:title" content="' . $hdog_title_tmp . '"/>';
-            $hdog_type_tmp = $this
-                ->params
-                ->get('hdog_type');
+            $hdog_type_tmp = $this->params->get('hdog_type');
             $hdog_type = '<meta property="og:type" content="' . $hdog_type_tmp . '"/>';
             $hdog_base = $document->getBase();
             $hdog_url = '<meta property="og:url" content="' . $hdog_base . '"/>';
-            $hdog_fbappid_tmp = $this
-                ->params
-                ->get('hdog_fbappid');
+            $hdog_fbappid_tmp = $this->params->get('hdog_fbappid');
             $hdog_fbappid = '<meta property="fb:app_id" content="' . $hdog_fbappid_tmp . '"/>';
             //get thumbnail image
-            $hdog_image_tmp = $this
-                ->params
-                ->get('hdog_image');
+            $hdog_image_tmp = $this->params->get('hdog_image');
             $hdog_image = '<meta property="og:image" content="' . JURI::base() . $hdog_image_tmp . '" />';
             //check article view
             $view = JRequest::getVar('view');
             $option = JRequest::getVar('option');
-            $disable_in = $this
-                ->params
-                ->get('disable_in');
+            $disable_in = $this->params->get('disable_in');
             $pieces = explode(",", $disable_in);
             foreach ($pieces as $value)
             {
@@ -109,7 +101,7 @@ class plgSystemHD_OG extends JPlugin
                 $jeaitem = $jeaitemsModel->getItem($jeaitemId);
 
                 $jeaparams = JFactory::getApplication('site')->getParams('com_jea');
-                $jeaprice = number_format($jeaitem->price, $jeaparams->get('decimals_number'), $jeaparams->get('decimals_separator'), $jeaparams->get('thousands_separator'));
+                $jeaprice = number_format($jeaitem->price, $jeaparams->get('decimals_number') , $jeaparams->get('decimals_separator') , $jeaparams->get('thousands_separator'));
                 if ($jeaparams->get('symbol_position') == '0')
                 {
                     $jeapricecurrency = $jeaparams->get('currency_symbol') . ' ' . $jeaprice;
@@ -121,18 +113,19 @@ class plgSystemHD_OG extends JPlugin
 
                 $jeaitemdesc = JText::_('COM_JEA_FIELD_REF_LABEL') . ': ' . $jeaitem->ref . '. ' . JText::_('COM_JEA_FIELD_PRICE_LABEL') . ': ' . $jeapricecurrency . '. ' . strip_tags($jeaitem->description);
 
-								$dbjea = JFactory::getDbo();
+                $dbjea = JFactory::getDbo();
                 $queryjea = $dbjea->getQuery(true);
                 $queryjea->select('images');
                 $queryjea->from('#__jea_properties');
                 $queryjea->where('id=' . $jeaitem->id);
                 $dbjea->setQuery($queryjea);
                 $jeaimages = $dbjea->loadObjectList();
-									foreach( $jeaimages as $jeaimage){
-										$images = json_decode($jeaimage->images);
-										$first_image = $images[0];
-										$thumb_img = $first_image->name;
-									}
+                foreach ($jeaimages as $jeaimage)
+                {
+                    $images = json_decode($jeaimage->images);
+                    $first_image = $images[0];
+                    $thumb_img = $first_image->name;
+                }
 
             }
             //end of check if view is JEA property
@@ -150,7 +143,7 @@ class plgSystemHD_OG extends JPlugin
                 $db->setQuery($query);
                 $results = $db->loadObjectList();
                 //       echo 'xx '.$results.' xx';
-
+                
             };
             $hdog_image_thumb = '<meta property="og:image" content="' . JURI::base() . $hdog_image_tmp . '" />';
             if (!empty($thumb_img))
@@ -181,10 +174,10 @@ class plgSystemHD_OG extends JPlugin
             {
                 $hdog_desc = '<meta property="og:description" content="' . $jeaitemdesc . '" />';
             };
-						//get title
-						if (($view == "property") and ($option == "com_jea"))
+            //get title
+            if (($view == "property") and ($option == "com_jea"))
             {
-                $hdog_title = '<meta property="og:title" content="' . $jeaitem->title. '" />';
+                $hdog_title = '<meta property="og:title" content="' . $jeaitem->title . '" />';
             };
             //get site name
             $hdog_name_tmp = $app->getCfg('sitename');
@@ -195,15 +188,11 @@ class plgSystemHD_OG extends JPlugin
             $oglanguage = str_replace('-', '_', $sitelanguage);
             $hdog_locale = '<meta property="og:locale" content="' . $oglanguage . '"/>';
             //get admin id
-            $hdog_admins_tmp = $this
-                ->params
-                ->get('hdog_admins');
+            $hdog_admins_tmp = $this->params->get('hdog_admins');
             $hdog_admins = '<meta property="fb:admins" content="' . $hdog_admins_tmp . '"/>';
             // render all to screen
             $hdog_all = $hdog_title . $hdog_type . $hdog_fbappid . $hdog_url . $hdog_image_thumb . $hdog_desc . $hdog_name . $hdog_locale;
-            $use_admin = $this
-                ->params
-                ->get('use_admin');
+            $use_admin = $this->params->get('use_admin');
             if ($use_admin == '1')
             {
                 $hdog_all = $hdog_all . $hdog_admins;
@@ -215,3 +204,4 @@ class plgSystemHD_OG extends JPlugin
         }
     }
 }
+
